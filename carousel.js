@@ -223,12 +223,15 @@ class Carousel {
   updateActiveStates() {
     // Atualizar estado ativo dos slides para acessibilidade
     this.slides.forEach((slide, index) => {
-      if (index === this.currentIndex) {
+      const isActive = index === this.currentIndex;
+      if (isActive) {
         slide.setAttribute("tabindex", "0");
         slide.setAttribute("aria-hidden", "false");
+        // Não alteramos o estilo dos elementos para não interferir com o hover
       } else {
         slide.setAttribute("tabindex", "-1");
         slide.setAttribute("aria-hidden", "true");
+        // Não alteramos o estilo dos elementos para não interferir com o hover
       }
     });
 
@@ -285,7 +288,14 @@ class Carousel {
     this.currentTranslate = newTranslate;
 
     requestAnimationFrame(() => {
+      // Aplicamos a transformação apenas ao trilho, não aos cartões individuais
       this.track.style.transform = `translateX(${this.currentTranslate}px)`;
+
+      // Garantimos que a transformação não afete o hover dos cartões
+      this.slides.forEach((slide) => {
+        // Mantemos o z-index e outras propriedades que afetam o hover
+        slide.style.pointerEvents = "auto";
+      });
     });
   }
 

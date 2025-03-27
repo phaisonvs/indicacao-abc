@@ -60,6 +60,34 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     content.classList.add("fade-in");
   }, delayTime); // Use a variável delayTime aqui
+
+  // Melhorar a experiência de hover nos cartões
+  const cartoes = document.querySelectorAll(".cartao-recurso");
+
+  // Adicionar eventos para cada cartão
+  cartoes.forEach((cartao) => {
+    // Garantir que o z-index seja aplicado corretamente no hover
+    cartao.addEventListener("mouseenter", function () {
+      // Certificar que o z-index é maior que os outros cartões
+      this.style.zIndex = "10";
+    });
+
+    cartao.addEventListener("mouseleave", function () {
+      // Voltar ao z-index normal após o hover
+      setTimeout(() => {
+        this.style.zIndex = "";
+      }, 300); // Corresponde à duração da transição CSS
+    });
+
+    // Adicionar classes para melhorar a experiência de foco por teclado
+    cartao.addEventListener("focus", function () {
+      this.classList.add("cartao-focado");
+    });
+
+    cartao.addEventListener("blur", function () {
+      this.classList.remove("cartao-focado");
+    });
+  });
 });
 
 /**

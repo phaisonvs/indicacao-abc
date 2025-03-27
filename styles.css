@@ -322,6 +322,11 @@ p {
   overflow: hidden;
   padding-top: 20px;
   /* Adicionado espaçamento vertical entre as setas e os cards */
+  touch-action: pan-y;
+  /* Permite rolagem vertical enquanto manipula os gestos horizontais */
+  /* Melhorar interação com os cartões */
+  min-height: 300px;
+  /* Garante espaço suficiente para o efeito hover */
 }
 
 /* Garantir que o carrossel não quebre o layout em desktop */
@@ -365,7 +370,7 @@ p {
   backdrop-filter: blur(8px);
   border-radius: 12px;
   padding: 24px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   flex: 0 0 auto;
   margin: 0 12px;
   width: calc(100% - 24px);
@@ -375,6 +380,9 @@ p {
   will-change: transform, opacity;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 640px) {
@@ -389,9 +397,13 @@ p {
   }
 }
 
-.cartao-recurso:hover {
-  transform: translateY(0px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.cartao-recurso:hover,
+.cartao-recurso.cartao-focado {
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  z-index: 2;
 }
 
 .icone-recurso {
