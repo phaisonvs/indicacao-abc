@@ -1,0 +1,15 @@
+# Editor history
+.history/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build directories
+dist/
+build/
+node_modules/ 
