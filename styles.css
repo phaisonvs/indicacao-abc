@@ -1022,3 +1022,76 @@ p {
     /* Torna-se visível */
   }
 }
+
+/* Estilos para o botão flutuante do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  /* Distância do fundo */
+  right: 20px;
+  /* Distância da direita */
+  background-color: transparent;
+  /* Remover fundo */
+  color: white;
+  /* Cor do ícone */
+  border-radius: 50%;
+  /* Botão redondo */
+  width: 70px;
+  /* Largura do botão */
+  height: 70px;
+  /* Altura do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+  /* Adicionando transição para o brilho */
+  z-index: 1000;
+  /* Para garantir que fique acima de outros elementos */
+}
+
+.whatsapp-button:hover {
+  box-shadow: 0 0 5px rgba(37, 211, 102, 0.5);
+  /* Efeito de glow mais sutil */
+}
+
+/* Estilo do ícone */
+.whatsapp-button img {
+  width: 56px;
+  /* Tamanho da imagem */
+  height: 56px;
+  /* Tamanho da imagem */
+  transition: filter 0.3s;
+  /* Adicionando transição para o brilho */
+}
+
+.whatsapp-button:hover img {
+  filter: brightness(1.2);
+  /* Aumenta o brilho da imagem ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .whatsapp-button {
+    width: 60px;
+    /* Largura do botão em dispositivos móveis */
+    height: 60px;
+    /* Altura do botão em dispositivos móveis */
+  }
+
+  .whatsapp-button img {
+    width: 50px;
+    /* Tamanho da imagem em dispositivos móveis */
+    height: 50px;
+    /* Tamanho da imagem em dispositivos móveis */
+  }
+}
+
+/* Efeito de pressão nos botões */
+.botao-formulario:not(:disabled):active,
+.whatsapp-button:not(:disabled):active {
+  transform: scale(0.95);
+  /* Efeito de escala ao pressionar */
+  transition: transform 0.1s ease-in-out;
+  /* Transição suave */
+}
