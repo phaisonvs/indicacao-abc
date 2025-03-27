@@ -1,0 +1,12 @@
+[core]
+	autocrlf = true
+	safecrlf = false
+	longpaths = true
+	packedGitLimit = 512m
+	packedGitWindowSize = 512m
+[http]
+	postBuffer = 157286400
+[pull]
+	rebase = false
+[push]
+	default = current 

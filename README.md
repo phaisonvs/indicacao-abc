@@ -23,11 +23,68 @@ Uma landing page responsiva para o programa de indicação da ABC da Construçã
 indicacao-abc/
 ├── index.html          # Arquivo HTML principal
 ├── styles.css          # Estilos CSS customizados
-├── script.js           # Funcionalidades JavaScript
-├── carousel.js         # Implementação do carrossel
+├── script.js           # Funcionalidades JavaScript (incluindo o carrossel)
+├── push_to_git.bat     # Script para envio ao Git (Windows)
+├── push_to_git.sh      # Script para envio ao Git (Linux/macOS)
 ├── assets/             # Pasta de imagens e recursos
 └── README.md           # Documentação do projeto
 ```
+
+## Envio de Atualizações para o GitHub
+
+### Usando os Scripts Automatizados
+
+Para facilitar o envio das alterações para o GitHub e evitar problemas comuns, foram criados scripts automatizados:
+
+#### Windows:
+
+1. Abra o Windows Explorer e navegue até a pasta do projeto
+2. Dê um duplo clique em `push_to_git.bat`
+3. Siga as instruções na tela para digitar a mensagem do commit
+4. O script fará o resto!
+
+#### Linux/macOS:
+
+1. Abra o Terminal
+2. Navegue até a pasta do projeto usando `cd caminho/para/o/projeto`
+3. Execute o script com `sh push_to_git.sh`
+4. Siga as instruções na tela para digitar a mensagem do commit
+
+### Envio Manual
+
+Se preferir enviar manualmente, siga estes passos:
+
+1. Configure o Git para lidar com caminhos longos e quebra de linha:
+
+   ```
+   git config core.autocrlf true
+   git config core.safecrlf false
+   git config core.longpaths true
+   git config http.postBuffer 157286400
+   ```
+
+2. Adicione todos os arquivos modificados:
+
+   ```
+   git add .
+   ```
+
+3. Crie um commit com uma mensagem descritiva:
+
+   ```
+   git commit -m "Descrição das alterações"
+   ```
+
+4. Envie para o GitHub:
+
+   ```
+   git push origin main
+   ```
+
+5. Se ocorrer algum erro, tente com a opção de força:
+   ```
+   git push -f origin main
+   ```
 
 ## Detalhes de Implementação
 

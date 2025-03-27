@@ -5,6 +5,7 @@
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Logs
 *.log
@@ -12,4 +13,14 @@ Thumbs.db
 # Build directories
 dist/
 build/
-node_modules/ 
+node_modules/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Diretórios problemáticos
+programa-de-indicacao-abc/ 
