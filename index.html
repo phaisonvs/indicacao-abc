@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Indicação</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="conteudo-altura-maxima fade-in">
+    <div class="container uniqueContainer">
+      <div class="secao-principal">
+        <div class="conteudo-principal">
+          <div class="cabecalho-logo">
+            <img src="/assets/abc-indicacao.png" alt="Logo ABC Indicação" class="logo">
+          </div>
+
+          <h1>Indique e Seja um Padrinho de Sucesso!</h1>
+
+          <p class="sub-title">O programa foi criado para fortalecer nossa rede de franquias, promover uma expansão
+            qualificada e incentivar o engajamento dos franqueados. Descubra como participar e quais são os benefícios!
+            Confira o regulamento do programa.</p>
+
+          <!-- CTA Extra -->
+          <!--<button class="botao-cta">Saiba Mais</button>-->
+        </div>
+
+        <div class="secao-formulario">
+          <div class="container-formulario bg-white/10 backdrop-blur-md rounded-xl uniquePadding">
+            <!-- <div class="cabecalho-formulario uniqueHeader">
+              <h2 class="titulo-formulario uniqueTitle">Cadastre agora mesmo</h2>
+              <p class="subtitulo-formulario uniqueSubtitle">Não perca essa chance!</p>
+            </div> -->
+
+            <form class="formulario-cotacao space-y-4" aria-label="Formulário de solicitação de cotação de seguro">
+              <!-- Dados do Indicador -->
+              <h3 class="title-indicador">Dados do Indicador:</h3>
+              <div class="grupo-formulario">
+                <label for="nomeIndicador" class="sr-only">Nome do Indicador</label>
+                <input type="text" id="nomeIndicador" class="input-nome" placeholder="Nome*" required
+                  aria-required="true">
+                <p class="mensagem-erro" aria-live="polite"></p>
+              </div>
+              <div class="grupo-formulario" style="display: flex; gap: 12px;">
+                <div style="flex: 1;">
+                  <label for="telefoneIndicador" class="sr-only">Telefone do Indicador</label>
+                  <input type="tel" id="telefoneIndicador" class="input-telefone" placeholder="Telefone*" required
+                    aria-required="true">
+                  <p class="mensagem-erro" aria-live="polite"></p>
+                </div>
+                <div style="flex: 1;">
+                  <label for="lojaIndicador" class="sr-only">Loja do Indicador</label>
+                  <select id="lojaIndicador" class="select-tipo-caminhao" required aria-required="true">
+                    <option value="" disabled selected>Loja*</option>
+                    <option value="loja1">Loja 1</option>
+                    <option value="loja2">Loja 2</option>
+                    <option value="loja3">Loja 3</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Dados do Indicado -->
+              <h3 class="title-indicado">Dados do Indicado:</h3>
+              <div class="grupo-formulario" style="display: flex; gap: 12px;">
+                <div style="flex: 1;">
+                  <label for="nomeIndicado" class="sr-only">Nome do Indicado</label>
+                  <input type="text" id="nomeIndicado" class="input-nome" placeholder="Nome*" required
+                    aria-required="true">
+                  <p class="mensagem-erro" aria-live="polite"></p>
+                </div>
+                <div style="flex: 1;">
+                  <label for="telefoneIndicado" class="sr-only">Telefone do Indicado</label>
+                  <input type="tel" id="telefoneIndicado" class="input-telefone" placeholder="Telefone*" required
+                    aria-required="true">
+                  <p class="mensagem-erro" aria-live="polite"></p>
+                </div>
+              </div>
+              <div class="grupo-formulario">
+                <label for="observacao" class="sr-only">Observação</label>
+                <textarea id="observacao" class="input-justificativa" placeholder="Observação" rows="4"
+                  aria-required="false"></textarea>
+              </div>
+
+              <div class="area-confirmacao">
+                <div class="grupo-checkbox">
+                  <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox-termos" required aria-required="true" checked>
+                    <label for="termos">
+                      Concordo com os termos e condições do programa de indicação.
+                      <a href="https://abcdaconstrucao.fbitsstatic.net/media/regulamento-programa-de-indicação.vf.pdf?v=202503271230"
+                        target="_blank" style="color: #EAB8E4; text-decoration: underline;">Regulamento</a>
+                    </label>
+                  </div>
+                </div>
+
+                <!--
+                <div class="grupo-checkbox">
+                  <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox-marketing" checked>
+                    <label for="marketing">Desejo receber atualizações sobre oportunidades na rede</label>
+                  </div>
+                </div>
+                -->
+
+                <div class="container-mensagem-erro">
+                  <p class="mensagem-erro" aria-live="polite">
+                    ⚠️ Você precisa aceitar os termos para continuar
+                  </p>
+                </div>
+              </div>
+
+              <div class="espaco-pre-botao"></div>
+              <button type="submit" class="botao-formulario" disabled><span>Enviar Indicação Agora</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="secao-recursos uniqueMargin">
+        <div class="navegacao-carrossel">
+          <button class="botao-carrossel botao-anterior" aria-label="Recursos anteriores">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="botao-carrossel botao-proximo" aria-label="Próximos recursos">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carrossel-recursos" id="carrossel-recursos">
+          <div class="trilha-recursos" id="trilhaRecursos">
+
+            <!-- Quem Pode Participar? -->
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-1">
+              <div class="icone-recurso">
+                <i class="fas fa-users uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-1" class="titulo-recurso">Quem Pode Participar?</h3>
+              <ul class="descricao-recurso">
+                <li>Franqueados Ativos</li>
+                <li>Compromisso com a Marca</li>
+                <li>Situação Regular</li>
+              </ul>
+            </div>
+
+            <!-- Regras Importantes -->
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-2">
+              <div class="icone-recurso">
+                <i class="fas fa-clipboard-list uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-2" class="titulo-recurso">Regras Importantes</h3>
+              <ul class="descricao-recurso">
+                <li>Vigência: 01/03/2025 a 31/12/2025</li>
+                <li>Indicações Múltiplas: Vale a primeira indicação</li>
+                <li>Pagamento: Condicionado às obrigações contratuais</li>
+              </ul>
+            </div>
+
+            <!-- Como Funciona -->
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-4">
+              <div class="icone-recurso">
+                <i class="fas fa-bullhorn uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-4" class="titulo-recurso">Como Funciona</h3>
+              <ul class="descricao-recurso">
+                <li>Indicações feitas pelos canais oficiais da ABC da Construção usando formulário disponibilizado.</li>
+              </ul>
+            </div>
+
+            <!-- Bonificação Contínua -->
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-3">
+              <div class="icone-recurso">
+                <i class="fas fa-hand-holding-usd uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-3" class="titulo-recurso">Bonificação Contínua</h3>
+              <ul class="descricao-recurso">
+                <li>Modelo Light: 1% sobre faturamento anual</li>
+                <li>Modelo Multi: 1,5% sobre faturamento anual</li>
+                <li>Modelo Total: 2% sobre faturamento anual</li>
+              </ul>
+            </div>
+
+
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-5">
+              <div class="icone-recurso">
+                <i class="fas fa-handshake uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-5" class="titulo-recurso">Benefícios da Indicação</h3>
+              <ul class="descricao-recurso">
+                <li>10% do valor de contrato e até 2% sobre o faturamento anual do novo franqueado.</li>
+              </ul>
+            </div>
+
+            <!-- Prazos e Datas -->
+            <div class="cartao-recurso" aria-labelledby="titulo-recurso-6">
+              <div class="icone-recurso">
+                <i class="fas fa-calendar-check uniqueIconSize"></i>
+              </div>
+              <h3 id="titulo-recurso-6" class="titulo-recurso">Prazos e Datas</h3>
+              <ul class="descricao-recurso">
+                <li>Programa válido de 01/03/2025 a 31/12/2025.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="uniqueFooter">
+        <div class="uniqueFlex justify-center mb-4">
+          <img src="/assets/abc-indicacao.png" alt="Logo ABC Indicação" class="logo-footer">
+        </div>
+
+        <p class="text-sm opacity-70">&copy; 2025 ABC DA CONSTRUÇÃO LTDA. Todos os direitos reservados.</p>
+        <p class="text-xs opacity-50 mt-2">Tudo em acabamentos, tudo para você.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="carousel.js"></script>
+</body>
+
+</html>

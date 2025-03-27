@@ -1,91 +1,87 @@
-# Trucking Insurance Landing Page
+# Programa de Indicação ABC
 
-A responsive landing page for a trucking insurance company with an interactive form and animated features carousel.
+Uma landing page responsiva para o programa de indicação da ABC da Construção, com formulário interativo e carrossel de recursos animado.
 
-![Trucking Insurance Landing Page](https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80)
+## Funcionalidades
 
-## Features
+- **Design Responsivo**: Layout totalmente responsivo que funciona em telas móveis, tablets e desktops
+- **Formulário Interativo**: Formulário com validação em tempo real e feedback visual
+- **Carrossel de Recursos Animado**: Carrossel amigável para dispositivos móveis que apresenta os benefícios do programa
+- **Acessibilidade**: Atributos ARIA e HTML semântico para melhor acessibilidade
+- **Interface Moderna**: Design limpo e moderno com animações e transições suaves
 
-- **Responsive Design**: Fully responsive layout that works on mobile, tablet, and desktop screens
-- **Interactive Form**: Form with real-time validation and visual feedback
-- **Animated Features Carousel**: Mobile-friendly carousel that showcases benefits
-- **Accessibility**: ARIA attributes and semantic HTML for better accessibility
-- **Modern UI**: Clean, modern design with smooth animations and transitions
-
-## Technologies Used
+## Tecnologias Utilizadas
 
 - HTML5
-- CSS3 (with Tailwind CSS utility classes)
+- CSS3 (com classes utilitárias customizadas)
 - JavaScript (ES6+)
-- Font Awesome for icons
+- Font Awesome para ícones
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
-trucking-insurance-landing/
-├── index.html          # Main HTML file
-├── styles.css          # Custom CSS styles
-├── script.js           # JavaScript functionality
-└── README.md           # Project documentation
+indicacao-abc/
+├── index.html          # Arquivo HTML principal
+├── styles.css          # Estilos CSS customizados
+├── script.js           # Funcionalidades JavaScript
+├── carousel.js         # Implementação do carrossel
+├── assets/             # Pasta de imagens e recursos
+└── README.md           # Documentação do projeto
 ```
 
-## Implementation Details
+## Detalhes de Implementação
 
-### Responsive Typography
+### Tipografia Responsiva
 
-The project uses CSS `clamp()` function to create responsive typography that scales smoothly across different screen sizes:
+O projeto utiliza a função CSS `clamp()` para criar tipografia responsiva que se adapta suavemente a diferentes tamanhos de tela:
 
 ```css
 :root {
-  --heading-responsive: clamp(2.5rem, 5vw + 1rem, 4rem);
+  --font-h1-hero-section: clamp(40px, 3vw + 28px, 64px);
+  --font-h2-sub-title: clamp(16px, 1.2vw, 18px);
+  --font-h3-section-title: clamp(24px, 1.5vw, 32px);
 }
 ```
 
-### Form Validation
+### Validação de Formulário
 
-The form includes real-time validation with visual feedback:
+O formulário inclui validação em tempo real com feedback visual:
 
-- Email validation with regex pattern
-- Name validation (minimum length)
-- Phone number formatting and validation
-- Visual feedback for all input states (focus, filled, error, disabled)
+- Validação de nome completo
+- Formatação e validação de número de telefone
+- Feedback visual para todos os estados de entrada (foco, preenchido, erro, desativado)
 
-### Features Carousel
+### Carrossel de Recursos
 
-On mobile and tablet devices, the features section transforms into an interactive carousel:
+Em dispositivos móveis e tablets, a seção de recursos se transforma em um carrossel interativo:
 
-- Auto-playing slides with pause on hover
-- Navigation buttons for manual control
-- Smooth transitions between slides
-- Automatic conversion back to grid layout on desktop
+- Botões de navegação para controle manual
+- Transições suaves entre slides
+- Conversão automática para layout em grade em desktop
+- Suporte para interação via teclado
 
-## Best Practices Implemented
+## Boas Práticas Implementadas
 
-1. **Semantic HTML**: Using appropriate HTML elements for better accessibility and SEO
-2. **Mobile-First Approach**: Designing for mobile first, then enhancing for larger screens
-3. **Progressive Enhancement**: Core functionality works without JavaScript
-4. **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
-5. **Performance Optimization**: Hardware-accelerated animations and transitions
-6. **Clean Code**: Well-organized, commented code for easier maintenance
+1. **HTML Semântico**: Uso de elementos HTML apropriados para melhor acessibilidade e SEO
+2. **Abordagem Mobile-First**: Design para dispositivos móveis primeiro, depois aprimorado para telas maiores
+3. **Melhoramento Progressivo**: Funcionalidade principal funciona sem JavaScript
+4. **Acessibilidade**: Rótulos ARIA, navegação por teclado e suporte para leitores de tela
+5. **Otimização de Desempenho**: Animações e transições aceleradas por hardware
+6. **Código Limpo**: Código bem organizado e comentado para facilitar a manutenção
 
-## Running the Project
+## Executando o Projeto
 
-Simply open the `index.html` file in a modern web browser. No build steps or server setup required.
+Basta abrir o arquivo `index.html` em um navegador web moderno. Nenhuma etapa de compilação ou configuração de servidor é necessária.
 
-## Browser Compatibility
+## Compatibilidade com Navegadores
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Android Chrome)
+- Chrome (mais recente)
+- Firefox (mais recente)
+- Safari (mais recente)
+- Edge (mais recente)
+- Navegadores móveis (iOS Safari, Android Chrome)
 
-## License
+## Créditos
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Credits
-
-- Background image from [Unsplash](https://unsplash.com)
-- Icons from [Font Awesome](https://fontawesome.com)
-- Profile image from [Random User Generator](https://randomuser.me)
+- Ícones do [Font Awesome](https://fontawesome.com)
+- Fonte [Chivo](https://fonts.google.com/specimen/Chivo) do Google Fonts
