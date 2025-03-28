@@ -1,12 +1,12 @@
 // Classe Carousel para gerenciar o carrossel de recursos
 class Carousel {
-  constructor(elementId, options = {}) {
-    console.log(`Inicializando carrossel com ID: ${elementId}`);
+  constructor(carouselClass, options = {}) {
+    console.log(`Inicializando carrossel com classe: ${carouselClass}`);
 
     // Elementos do DOM
-    this.carousel = document.getElementById(elementId);
+    this.carousel = document.querySelector(`.${carouselClass}`);
     if (!this.carousel) {
-      console.error(`Elemento com ID "${elementId}" não encontrado.`);
+      console.error(`Elemento com classe "${carouselClass}" não encontrado.`);
       return;
     }
 
@@ -22,8 +22,8 @@ class Carousel {
         '.botao-carrossel[aria-label="Próximos recursos"]'
       );
     } else {
-      this.prevButton = document.getElementById("botaoAnterior");
-      this.nextButton = document.getElementById("botaoProximo");
+      this.prevButton = document.querySelector(".botao-anterior");
+      this.nextButton = document.querySelector(".botao-proximo");
     }
 
     if (!this.track) {
@@ -484,8 +484,17 @@ function inicializarValidacaoFormulario() {
   // Limpar qualquer estilo de erro que possa ter sido aplicado no carregamento da página
   const todosInputs = formulario.querySelectorAll("input, select");
   todosInputs.forEach((input) => {
-    const id = input.id;
-    inputsTocados[id] = false; // Inicializa todos os inputs como não tocados
+    // Usar classes como identificadores em vez de IDs
+    const inputIdentifier =
+      Array.from(input.classList).find(
+        (className) =>
+          className.includes("nome-") ||
+          className.includes("telefone-") ||
+          className.includes("loja-") ||
+          className.includes("campo-")
+      ) || input.classList[0];
+
+    inputsTocados[inputIdentifier] = false; // Inicializa todos os inputs como não tocados
     input.style.borderColor = ""; // Remove qualquer borda de erro
 
     const mensagemErro = input.nextElementSibling;
@@ -497,8 +506,19 @@ function inicializarValidacaoFormulario() {
 
   // Função para validar um input específico
   const validarInput = (input) => {
+    // Identificar o input por sua classe específica
+    const inputIdentifier =
+      Array.from(input.classList).find(
+        (className) =>
+          className.includes("nome-") ||
+          className.includes("telefone-") ||
+          className.includes("loja-") ||
+          className.includes("campo-")
+      ) || input.classList[0];
+
     // Se o input não foi tocado e está vazio, não mostra erro
-    if (!inputsTocados[input.id] || input.value.trim() === "") return true;
+    if (!inputsTocados[inputIdentifier] || input.value.trim() === "")
+      return true;
 
     let valido = true;
     if (input.type === "text" && input.classList.contains("input-nome")) {
@@ -536,16 +556,26 @@ function inicializarValidacaoFormulario() {
 
   // Adiciona eventos para cada input
   todosInputs.forEach((input) => {
+    // Identificar o input por sua classe específica
+    const inputIdentifier =
+      Array.from(input.classList).find(
+        (className) =>
+          className.includes("nome-") ||
+          className.includes("telefone-") ||
+          className.includes("loja-") ||
+          className.includes("campo-")
+      ) || input.classList[0];
+
     // Quando o usuário começa a digitar
     input.addEventListener("input", function () {
-      inputsTocados[input.id] = true;
+      inputsTocados[inputIdentifier] = true;
       validarInput(input);
       verificarEstadoBotao(inputsTocados);
     });
 
     // Quando o input perde o foco
     input.addEventListener("blur", function () {
-      inputsTocados[input.id] = true;
+      inputsTocados[inputIdentifier] = true;
       validarInput(input);
       verificarEstadoBotao(inputsTocados);
     });
@@ -576,7 +606,17 @@ function inicializarValidacaoFormulario() {
 
     // Marca todos os inputs como tocados para validação completa
     todosInputs.forEach((input) => {
-      inputsTocados[input.id] = true;
+      // Identificar o input por sua classe específica
+      const inputIdentifier =
+        Array.from(input.classList).find(
+          (className) =>
+            className.includes("nome-") ||
+            className.includes("telefone-") ||
+            className.includes("loja-") ||
+            className.includes("campo-")
+        ) || input.classList[0];
+
+      inputsTocados[inputIdentifier] = true;
       validarInput(input);
     });
 
@@ -608,7 +648,17 @@ function inicializarValidacaoFormulario() {
 
         // Limpa todas as flags de inputs tocados
         todosInputs.forEach((input) => {
-          inputsTocados[input.id] = false;
+          // Identificar o input por sua classe específica
+          const inputIdentifier =
+            Array.from(input.classList).find(
+              (className) =>
+                className.includes("nome-") ||
+                className.includes("telefone-") ||
+                className.includes("loja-") ||
+                className.includes("campo-")
+            ) || input.classList[0];
+
+          inputsTocados[inputIdentifier] = false;
           input.style.borderColor = "";
           const mensagemErro = input.nextElementSibling;
           if (
@@ -668,8 +718,14 @@ function validarInputCondicional(
 }
 
 function validarSelectCondicional(elementoSelect) {
+  // Identificar o select por sua classe específica
+  const selectIdentifier =
+    Array.from(elementoSelect.classList).find((className) =>
+      className.includes("loja-")
+    ) || elementoSelect.classList[0];
+
   // Valida o select quando ele é tocado
-  if (!inputsTocados[elementoSelect.id]) {
+  if (!inputsTocados[selectIdentifier]) {
     return true;
   }
 

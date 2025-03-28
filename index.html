@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="styles.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -43,20 +42,19 @@
               <h3 class="title-indicador">Dados do Indicador:</h3>
               <div class="grupo-formulario">
                 <label for="nomeIndicador" class="sr-only">Nome do Indicador</label>
-                <input type="text" id="nomeIndicador" class="input-nome" placeholder="Nome*" required
-                  aria-required="true">
+                <input type="text" class="input-nome nome-indicador" placeholder="Nome*" required aria-required="true">
                 <p class="mensagem-erro" aria-live="polite"></p>
               </div>
               <div class="grupo-formulario" style="display: flex; gap: 12px;">
                 <div style="flex: 1;">
                   <label for="telefoneIndicador" class="sr-only">Telefone do Indicador</label>
-                  <input type="tel" id="telefoneIndicador" class="input-telefone" placeholder="Telefone*" required
+                  <input type="tel" class="input-telefone telefone-indicador" placeholder="Telefone*" required
                     aria-required="true">
                   <p class="mensagem-erro" aria-live="polite"></p>
                 </div>
                 <div style="flex: 1;">
                   <label for="lojaIndicador" class="sr-only">Loja do Indicador</label>
-                  <select id="lojaIndicador" class="select-tipo-caminhao" required aria-required="true">
+                  <select class="select-tipo-caminhao loja-indicador" required aria-required="true">
                     <option value="" disabled selected>Loja*</option>
                     <option value="loja1">Loja 1</option>
                     <option value="loja2">Loja 2</option>
@@ -70,20 +68,19 @@
               <div class="grupo-formulario" style="display: flex; gap: 12px;">
                 <div style="flex: 1;">
                   <label for="nomeIndicado" class="sr-only">Nome do Indicado</label>
-                  <input type="text" id="nomeIndicado" class="input-nome" placeholder="Nome*" required
-                    aria-required="true">
+                  <input type="text" class="input-nome nome-indicado" placeholder="Nome*" required aria-required="true">
                   <p class="mensagem-erro" aria-live="polite"></p>
                 </div>
                 <div style="flex: 1;">
                   <label for="telefoneIndicado" class="sr-only">Telefone do Indicado</label>
-                  <input type="tel" id="telefoneIndicado" class="input-telefone" placeholder="Telefone*" required
+                  <input type="tel" class="input-telefone telefone-indicado" placeholder="Telefone*" required
                     aria-required="true">
                   <p class="mensagem-erro" aria-live="polite"></p>
                 </div>
               </div>
               <div class="grupo-formulario">
                 <label for="observacao" class="sr-only">Observação</label>
-                <textarea id="observacao" class="input-justificativa" placeholder="Observação" rows="4"
+                <textarea class="input-justificativa campo-observacao" placeholder="Observação" rows="4"
                   aria-required="false"></textarea>
               </div>
 
@@ -94,7 +91,9 @@
                     <label for="termos">
                       Concordo com os termos e condições do programa de indicação.
                       <a href="https://abcdaconstrucao.fbitsstatic.net/media/regulamento-programa-de-indicação.vf.pdf?v=202503271230"
-                        target="_blank" style="color: #EAB8E4; text-decoration: underline;">Regulamento</a>
+                        target="_blank" class="link-regulamento">
+                        Regulamento <i class="fas fa-download"></i>
+                      </a>
                     </label>
                   </div>
                 </div>
@@ -132,15 +131,15 @@
           </button>
         </div>
 
-        <div class="carrossel-recursos" id="carrossel-recursos">
-          <div class="trilha-recursos" id="trilhaRecursos">
+        <div class="carrossel-recursos">
+          <div class="trilha-recursos">
 
             <!-- Quem Pode Participar? -->
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-1">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-users uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-1" class="titulo-recurso">Quem Pode Participar?</h3>
+              <h3 class="titulo-recurso titulo-recurso-1">Quem Pode Participar?</h3>
               <ul class="descricao-recurso">
                 <li>Franqueados Ativos</li>
                 <li>Compromisso com a Marca</li>
@@ -149,11 +148,11 @@
             </div>
 
             <!-- Regras Importantes -->
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-2">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-clipboard-list uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-2" class="titulo-recurso">Regras Importantes</h3>
+              <h3 class="titulo-recurso titulo-recurso-2">Regras Importantes</h3>
               <ul class="descricao-recurso">
                 <li>Vigência: 01/03/2025 a 31/12/2025</li>
                 <li>Indicações Múltiplas: Vale a primeira indicação</li>
@@ -162,22 +161,22 @@
             </div>
 
             <!-- Como Funciona -->
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-4">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-bullhorn uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-4" class="titulo-recurso">Como Funciona</h3>
+              <h3 class="titulo-recurso titulo-recurso-4">Como Funciona</h3>
               <ul class="descricao-recurso">
                 <li>Indicações feitas pelos canais oficiais da ABC da Construção usando formulário disponibilizado.</li>
               </ul>
             </div>
 
             <!-- Bonificação Contínua -->
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-3">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-hand-holding-usd uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-3" class="titulo-recurso">Bonificação Contínua</h3>
+              <h3 class="titulo-recurso titulo-recurso-3">Bonificação Contínua</h3>
               <ul class="descricao-recurso">
                 <li>Modelo Light: 1% sobre faturamento anual</li>
                 <li>Modelo Multi: 1,5% sobre faturamento anual</li>
@@ -186,22 +185,22 @@
             </div>
 
 
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-5">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-handshake uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-5" class="titulo-recurso">Benefícios da Indicação</h3>
+              <h3 class="titulo-recurso titulo-recurso-5">Benefícios da Indicação</h3>
               <ul class="descricao-recurso">
                 <li>10% do valor de contrato e até 2% sobre o faturamento anual do novo franqueado.</li>
               </ul>
             </div>
 
             <!-- Prazos e Datas -->
-            <div class="cartao-recurso" aria-labelledby="titulo-recurso-6">
+            <div class="cartao-recurso">
               <div class="icone-recurso">
                 <i class="fas fa-calendar-check uniqueIconSize"></i>
               </div>
-              <h3 id="titulo-recurso-6" class="titulo-recurso">Prazos e Datas</h3>
+              <h3 class="titulo-recurso titulo-recurso-6">Prazos e Datas</h3>
               <ul class="descricao-recurso">
                 <li>Programa válido de 01/03/2025 a 31/12/2025.</li>
               </ul>

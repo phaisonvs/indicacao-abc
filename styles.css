@@ -1107,3 +1107,42 @@ p {
   transition: transform 0.1s ease-in-out;
   /* Transição suave */
 }
+
+/* Estilo para inputs com fundo translúcido */
+input,
+textarea,
+select {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fundo branco translúcido */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* Borda sutil */
+  border-radius: 4px;
+  /* Bordas arredondadas */
+  padding: 10px;
+  /* Espaçamento interno */
+  font-size: 16px;
+  /* Tamanho da fonte */
+  transition: background-color 0.3s ease;
+  /* Transição suave para o fundo */
+}
+
+/* Estilo para o placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  /* Cor do placeholder com mais contraste */
+  opacity: 1;
+  /* Garantir que o placeholder seja totalmente opaco */
+}
+
+/* Efeito ao focar no input */
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: rgba(255, 255, 255, 1);
+  /* Fundo branco sólido ao focar */
+  border-color: rgba(0, 0, 0, 0.5);
+  /* Borda mais escura ao focar */
+  outline: none;
+  /* Remover contorno padrão */
+}
